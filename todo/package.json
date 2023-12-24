@@ -1,0 +1,61 @@
+{
+  "name": "coinstrat",
+  "private": true,
+  "version": "0.0.1",
+  "description": "Coinstrat là nơi dễ dàng nhất để nhận lãi suất tiết kiệm, vay thế chấp và giao dịch tiền điện tử của bạn",
+  "type": "module",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "src/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vltk1/coinstrat.git"
+  },
+  "keywords": [
+    "coinstrat"
+  ],
+  "author": "coinstrat",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vltk1/coinstrat/issues"
+  },
+  "homepage": "https://www.coinstrat.com/",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "rollup": "rollup --config --bundleConfigAsCjs",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-typescript": "^11.1.5",
+    "@types/react": "^18.2.43",
+    "@types/react-dom": "^18.2.17",
+    "@typescript-eslint/eslint-plugin": "^6.14.0",
+    "@typescript-eslint/parser": "^6.14.0",
+    "@vitejs/plugin-react": "^4.2.1",
+    "eslint": "^8.55.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.5",
+    "rollup": "^4.9.1",
+    "rollup-plugin-dts": "^6.1.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-typescript2": "^0.36.0",
+    "tslib": "^2.6.2",
+    "typescript": "^5.3.3",
+    "vite": "^5.0.8"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0"
+  }
+}
