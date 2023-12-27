@@ -9,21 +9,24 @@
     ],
     "module": "ESNext",
     "skipLibCheck": true,
-    /* Bundler mode */
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
-    "resolveJsonModule": true,
+    "resolveJsonModule": false,
     "isolatedModules": true,
-    "declaration": true,
-    "declarationDir": "types",
-    "emitDeclarationOnly": true,
+    "noEmit": false,
     "jsx": "react-jsx",
-    // "sourceMap": true,
-    /* Linting */
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+    // "noEmitHelpers": false,
+    // "importHelpers": true,
+    // "noResolve": false,
+    // "noEmitOnError": false,
+    // "inlineSourceMap": false,
+    "declaration": true,
+    "declarationDir": "output.file",
+    "emitDeclarationOnly": true
   },
   "include": [
     "src"

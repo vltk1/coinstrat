@@ -1,11 +1,10 @@
-export default interface ButtonProps {
-    getStyles: any;
-    children: string;
-    outline: string;
-    variant: "text" | "outline" | "containe";
-    color: string;
-    size: "small" | "medium" | "large";
-    disabled?: boolean;
-    loading?: boolean;
-}
 
+export interface ButtonProp {
+    children: React.ReactNode;
+    variant?: "default" | "primary" | "text" | "link" | "outline";
+    color?: string;
+    size?: "xs" | "sm" | "md" | "lg";
+    active?: boolean;
+    loading?: boolean;
+    disabled?: boolean;
+}

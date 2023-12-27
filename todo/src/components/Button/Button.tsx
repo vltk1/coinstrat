@@ -1,17 +1,18 @@
 import { useRef, useState } from "react";
-import ButtonProps from "./Button.types";
-import styles from "./Button.module.scss"
-import withStyles from "../../../hoc/widthStyles"
+import styles from "./Button.module.scss";
+import { ButtonProp } from "./Button.types";
+import { getClasses } from "../helpers/styles";
 
-const Button: React.FC<ButtonProps> = ({
-  getStyles,
+const Button: React.FC<ButtonProp> = ({
   children,
-  variant = "outline",
-  color = "primary",
-  size = "small",
+  variant = "default",
+  color = "blue",
+  size = "md",
+  active = false,
   loading = false,
   disabled = false,
 }) => {
+
   const wavesInit: any = (keyIndex: number, wavesAttach: any) => {
     return (
       <span key={keyIndex} className={getStyles("button-waves")} style={wavesAttach}></span>
@@ -33,12 +34,23 @@ const Button: React.FC<ButtonProps> = ({
     setTimeout(() => setWaves(null), 750)
   };
 
+  color =
+    variant === "primary" ? `${color}-primary` :
+      variant === "outline" ? `${color}-outline` :
+        variant === "text" ? `${color}-text` : color;
+
+  const getStyles = getClasses(styles)({
+    variant,
+    color,
+    size
+  });
   return (
     <button
       ref={clientWidth}
       className={getStyles("button", ["variant", "color", "size"], {
-        "is-disabled": disabled,
+        "is-active": active,
         "is-loading": loading,
+        "is-disabled": disabled
       })}
       onClick={handleWaves}>
       <span>{children}</span>
@@ -47,4 +59,4 @@ const Button: React.FC<ButtonProps> = ({
   );
 };
 
-export default withStyles(styles)(Button);
+export default Button;

@@ -14,25 +14,19 @@ const meta = {
   tags: ['autodocs'],
   // More on argTypes: https://storybook.js.org/docs/api/argtypes
   argTypes: {
-    label: {
-      control: 'text',
-      description: 'Overwritten description',
-    },
     variant: {
-      control: 'select', options: ["text", "outline"]
+      control: 'select', options: ["primary", "text", "link", "outline"],
+      description: 'Kiểu mẫu',
     },
     color: {
-      control: 'select', options: ["primary", "secondary", "success"]
+      control: 'select', options: ["green", "blue"],
+      description: 'Màu sắc',
     },
     size: {
-      control: 'inline-radio', options: ['small', 'medium', 'large'],
+      control: 'inline-radio', options: ['xs', 'sm', 'md', "lg"],
       description: 'Kích thước',
-      default: "ok",
     },
-    state: {
-      control: 'inline-check', options: ['disabled', 'loading'],
-      description: 'Kích thước'
-    },
+
   },
 
 
@@ -44,19 +38,16 @@ type Story = StoryObj<typeof meta>;
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Primary: Story = {
   args: {
-    children: 'Button',
-    variant: "text",
-    color: "primary",
-    size: "medium",
+    children: "Button",
+    variant: "outline",
+    color: "blue",
+    size: "md",
   },
 };
 
 export const Secondary: Story = {
   args: {
-    children: 'Button',
-    variant: "outline",
-    color: "primary",
-    size: "medium",
+    children: "Button",
   },
 };
 

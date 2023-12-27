@@ -1,112 +1,131 @@
 .button {
-  overflow: hidden;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  vertical-align: middle;
-  display: inline-flex;
-  -webkit-box-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  justify-content: center;
-  position: relative;
-  box-sizing: border-box;
-  outline: 0px;
-  margin: 0px;
-  cursor: pointer;
-  appearance: none;
-  text-decoration: none;
-  font-weight: 500;
-  line-height: 1.46;
-  letter-spacing: 0.02857em;
-  text-transform: uppercase;
-  padding: .375rem .75rem .25rem .75rem;
-  border-radius: .25rem;
-  -webkit-tap-highlight-color: transparent;
-  background-color: transparent;
-  color: #fff;
-  border: 0;
-
-  span {
+    overflow: hidden;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    vertical-align: middle;
+    display: inline-flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
     position: relative;
-    z-index: 10;
-  }
+    box-sizing: border-box;
+    outline: 0px;
+    margin: 0px;
+    cursor: pointer;
+    appearance: none;
+    text-decoration: none;
+    font-weight: 500;
+    line-height: 1.46;
+    letter-spacing: 0.02857em;
+    text-transform: uppercase;
+    padding: .375rem .75rem .25rem .75rem;
+    border-radius: .25rem;
+    -webkit-tap-highlight-color: transparent;
+    background-color: transparent;
+    color: #3a6cf5;
+    border: 0;
 
-  &-waves {
-    position: absolute !important;
-    z-index: 0 !important;
-    border-radius: 50%;
-    width: 2.3rem;
-    height: 2.3rem;
-    margin-top: -0.625rem;
-    margin-left: -0.625rem;
-    opacity: 0;
-    background-color: rgb(141, 186, 231);
-    transform: scale(0);
-    pointer-events: none;
-    animation: waves 750ms;
-  }
+    span {
+        position: relative;
+        z-index: 10;
+    }
+
+    &-waves {
+        position: absolute !important;
+        z-index: 0 !important;
+        border-radius: 50%;
+        width: 2.3rem;
+        height: 2.3rem;
+        margin-top: -0.625rem;
+        margin-left: -0.625rem;
+        opacity: 0;
+        background-color: rgb(141, 186, 231);
+        transform: scale(0);
+        pointer-events: none;
+        animation: waves 750ms;
+    }
 }
-
-.variant {
-  &-text {}
-
-  &-outline {
-    border: 1px solid rgba(25, 118, 210, 0.5);
-  }
-
-  &-containe {
-    background-color: rgba(25, 118, 210, 0.5);
-  }
-}
-
-
 
 .color {
-  &-primary {
-    background-color: transparent;
-    color: rgb(25, 118, 210);
-  }
+    &-blue {
+        &-primary {
+            color: #fff;
+            background-color: blue;
+        }
 
-  &-secondary {
-    background-color: rgb(25, 118, 210);
-  }
+        &-text {
+            color: blue;
+            border: 0;
+            background-color: transparent;
+        }
 
-  &-success {
-    background-color: green;
-  }
+        &-outline {
+            color: blue;
+            border: 2px solid blue;
+        }
+    }
+
+    &-green {
+        &-primary {
+            color: #fff;
+            background-color: green;
+        }
+
+        &-text {
+            color: green;
+            border: 0;
+            background-color: transparent;
+        }
+
+        &-outline {
+            color: green;
+            border: 2px solid green;
+        }
+    }
 }
-
-
-
 
 .size {
-  &-small {
-    font-size: .875rem;
-    min-width: 4rem;
-    min-height: 1.875rem;
-  }
+    &-xs {
+        font-size: 12px;
+    }
 
-  &-medium {
-    font-size: 1rem;
-    min-width: 5.625rem;
-    min-height: 2.25rem;
-  }
+    &-sm {
+        font-size: 14px;
+    }
 
-  &-large {
-    font-size: 1.125rem;
-    min-width: 5.75rem;
-    min-height: 2.625rem;
-  }
+    &-md {
+        font-size: 16px;
+    }
+
+    &-lg {
+        font-size: 18px;
+    }
 }
 
-@keyframes waves {
-  0% {
-    transform: scale(0);
-  }
+.is {
+    &-active {
+        opacity: .85;
+    }
 
-  46% {
-    opacity: 1;
-  }
+    &-loading {
+        opacity: .4;
+    }
+
+    &-disabled {
+        opacity: .2;
+    }
+}
+
+
+@keyframes waves {
+    0% {
+        transform: scale(0);
+    }
+
+    46% {
+        opacity: 1;
+    }
 }

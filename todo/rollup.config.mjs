@@ -1,11 +1,12 @@
 import resolve from '@rollup/plugin-node-resolve';
 import { babel } from '@rollup/plugin-babel';
-import typescript from '@rollup/plugin-typescript';
+import typescript from "rollup-plugin-typescript2";
 import commonjs from '@rollup/plugin-commonjs';
 import { dts } from "rollup-plugin-dts";
 import postcss from 'rollup-plugin-postcss'
 import del from 'rollup-plugin-delete'
 
+import { DEFAULT_EXTENSIONS } from "@babel/core";
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 const packageJson = require('./package.json');
 
@@ -14,33 +15,37 @@ export default [
         input: 'src/index.ts',
         output: {
             file: packageJson.main,
-            format: 'esm',
+            format: 'cjs',
             // sourcemap: true,
         },
 
         plugins: [
             typescript({ tsconfig: 'tsconfig.json' }),
-            resolve(),
+            resolve({
+                extensions: [".js", ".ts"],
+            }),
             commonjs(),
             peerDepsExternal(),
             postcss({
-                extract: true,
                 modules: true
             }),
             babel({
-                exclude: 'node_modules/**',
-                presets: ['@babel/preset-react'],
+                presets: ["@babel/preset-react"],
+                extensions: [...DEFAULT_EXTENSIONS, ".ts", ".tsx"],
+                babelHelpers: "bundled",
             }),
-
         ]
     },
     {
-        input: 'dist/index.d.ts',
-        output: [{ file: 'dist/index.d.ts', format: 'esm' }],
+        input: "dist/components/index.d.ts",
+        output: [{ file: "dist/index.d.ts", format: "es" }],
         plugins: [
             dts(),
-            // del({ targets: "./dist/types" }),
+            del({
+                targets: "./dist/components",
+                hook: "buildEnd",
+            }),
         ],
-    }
+    },
 ]
 
