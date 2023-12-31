@@ -15,18 +15,23 @@ const meta = {
   // More on argTypes: https://storybook.js.org/docs/api/argtypes
   argTypes: {
     variant: {
-      control: 'select', options: ["primary", "text", "link", "outline"],
+      control: 'select', options: ["primary", "ghost", "link", "outline"],
       description: 'Kiểu mẫu',
     },
     color: {
-      control: 'select', options: ["green", "blue"],
+      control: 'select', options: [
+        "red", "orange", "green", "cyan", "blue", "violet", "dark", "light"
+      ],
       description: 'Màu sắc',
     },
     size: {
       control: 'inline-radio', options: ['xs', 'sm', 'md', "lg"],
       description: 'Kích thước',
     },
-
+    rounded: {
+      control: 'inline-radio', options: ['md', "lg", "full"],
+      description: 'Kích thước',
+    }
   },
 
 
@@ -39,9 +44,9 @@ type Story = StoryObj<typeof meta>;
 export const Primary: Story = {
   args: {
     children: "Button",
-    variant: "outline",
+    variant: "primary",
     color: "blue",
-    size: "md",
+    rounded: "lg",
   },
 };
 

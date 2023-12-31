@@ -22,22 +22,17 @@ export default [
                 file: packageJson.main,
                 format: 'cjs',
                 sourcemap: true,
-                exports: "named",
-                interop: "auto",
+                name: 'react-lib'
             },
             {
                 file: packageJson.module,
                 format: 'esm',
-                interop: "esModule",
                 sourcemap: true
             }
         ],
         external: [
             "styled-components"
         ],
-        globals: {
-            "styled-components": "styled"
-        },
         plugins: [
             typescript({
                 tsconfigDefaults: defaults,
