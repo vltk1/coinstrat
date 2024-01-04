@@ -30,7 +30,7 @@
     // "noEmitOnError": false,
     // "inlineSourceMap": false,
     "declaration": true,
-    "declarationDir": "output.file",
+    "declarationDir": "output.dir",
     "emitDeclarationOnly": false
   },
   "include": [
